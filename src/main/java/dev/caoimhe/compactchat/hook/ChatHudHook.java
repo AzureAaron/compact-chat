@@ -57,7 +57,7 @@ public class ChatHudHook {
 
     /**
      * If the option is enabled, common separators will be ignored.
-     * A message is a common separator if it contains ====== or -------
+     * A message is a common separator if it contains ====== or ------- or ▬▬▬▬▬▬
      */
     private boolean shouldIgnoreCommonSeparator(Text message) {
         if (!Configuration.getInstance().ignoreCommonSeparators) {
@@ -68,7 +68,8 @@ public class ChatHudHook {
         return trimmedString.isEmpty()
             || trimmedString.isBlank()
             || trimmedString.contains("------")
-            || trimmedString.contains("======");
+            || trimmedString.contains("======")
+            || trimmedString.contains("▬▬▬▬▬▬");
     }
 
     /**
